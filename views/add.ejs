@@ -1,0 +1,15 @@
+<%- include('./head') %>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
+
+<div class="position-absolute top-50 start-50 translate-middle">
+    <form action="/addpost" method="post">
+      <p>Agregar dato</p>
+      <input type="text" placeholder="Nombre" id="txtnombre" name="txtnombre"><br>
+      <input type="text" placeholder="Apellido" id="txtapell" name="txtapell"><br>
+      <input type="submit" value="Guardar"><br>
+      <a href="/">Cancelar</a>
+    </form>
+</div>
+
+<%- include('./foot') %>

@@ -1,0 +1,18 @@
+<%- include('./head') %>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
+
+<div class="position-absolute top-50 start-50 translate-middle">
+    <% if(persona){ %>
+    <form action="/edit" method="post">
+        <p>Agregar dato</p>
+        <input type="text" id="txtid" name="txtid" value="<%= persona.id %>" hidden>
+        <input type="text" id="txtnombre" name="txtnombre" value="<%= persona.nombre %>"><br>
+        <input type="text" id="txtapell" name="txtapell" value="<%= persona.apellido %>"><br>
+        <input type="submit" value="Actualizar"><br>
+        <a href="/">Cancelar</a>
+    </form>
+    <% } %>
+</div>
+
+<%- include('./foot') %>

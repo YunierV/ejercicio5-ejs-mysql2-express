@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./head') %>
+    <!--css y boostrap en el head-->
+    <title>Inicio</title>
+</head>
+<body>
+    <h2>Personas</h2>
+    <div class="table-wrapper">
+        <a href="/add" class="btn btn-success mb-3">💾 Agregar</a>
+        <table class="fl-table">
+            <thead>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <% resultado.forEach((persona)=>{ %>
+                <tr>
+                    <td><%= persona.id %></td>
+                    <td><%= persona.nombre %></td>
+                    <td><%= persona.apellido %></td>
+                    <td>
+                        <a href="/selecid/<%= persona.id %>" class="btn btn-primary" >✏️ editar</a>
+                        <a href="/delect/<%= persona.id %>" onclick="return confirm('esta seguro que desea eliminar a <%= persona.nombre %> con el id <%= persona.id %>')" class="btn btn-danger">🗑️ borrar</a>
+                    </td>
+                </tr>
+                <% })%>
+            </tbody>
+        </table>
+    </div>
+    <%- include('./foot') %>
+</body>
+</html>
